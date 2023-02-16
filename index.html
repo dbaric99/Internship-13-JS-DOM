@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/index.css" />
+    <title>JS DOM</title>
+  </head>
+  <body>
+    <div class="form">
+      <h1 class="form__title">Account Details</h1>
+
+      <div class="form__element__wrapper">
+        <label for="first-name" class="input__label">First Name</label>
+        <input type="text" placeholder="User" class="input__field" />
+      </div>
+
+      <div class="form__element__wrapper">
+        <label for="first-name" class="input__label">Last Name</label>
+        <input type="text" placeholder="Example" class="input__field" />
+      </div>
+
+      <div class="form__element__wrapper">
+        <label for="education-level" class="input__label"
+          >What level do you primarily teach?</label
+        >
+        <select name="" id="education-level" class="form__select">
+          <option value="elementary" class="education-level__option">
+            Elementary School
+          </option>
+          <option value="middle" class="education-level__option">
+            Middle School
+          </option>
+          <option value="high" class="education-level__option">
+            High school
+          </option>
+        </select>
+      </div>
+
+      <div class="form__element__wrapper">
+        <label for="experience" class="input__label"
+          >How long have you been teaching?</label
+        >
+        <select name="" id="experience" class="form__select">
+          <option value="entry" class="experience__option">1-5 years</option>
+          <option value="low" class="experience__option">5-10 years</option>
+          <option value="medium" class="experience__option">10-20 years</option>
+          <option value="high" class="experience__option">20+ years</option>
+        </select>
+      </div>
+
+      <button class="btn btn--transparent">Change Password</button>
+      <button class="btn btn--blue">Save changes</button>
+    </div>
+  </body>
+</html>

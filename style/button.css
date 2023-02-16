@@ -1,0 +1,21 @@
+.btn {
+    display: inline;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    width: fit-content;
+    padding: 0;
+}
+
+.btn--transparent {
+    color: var(--blue);
+    background-color: transparent;
+}
+
+.btn--blue {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 20px;
+    justify-self: flex-end;
+}

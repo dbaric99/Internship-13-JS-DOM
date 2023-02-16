@@ -1,0 +1,18 @@
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 50px;
+    width: 530px;
+    color: var(--black);
+    font-family: sans-serif;
+    grid-gap: 20px;
+}
+
+.form__title {
+    grid-column: 1/-1;
+}
+
+.form__element__wrapper {
+    display: flex;
+    flex-direction: column;
+}

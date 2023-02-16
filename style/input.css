@@ -1,0 +1,16 @@
+.input__label {
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+.input__field,
+.form__select {
+    color: var(--grey);
+    height: 30px;
+    font-size: 16px;
+}
+
+.form__select {
+    height: 36px;
+}
