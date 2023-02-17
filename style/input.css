@@ -6,7 +6,7 @@
 
 .input__field,
 .form__select {
-    color: var(--grey);
+    color: black;
     height: 35px;
     font-size: 16px;
     padding: 0px 5px;
@@ -20,8 +20,8 @@
 
 
 /* classes appended with js */
-.input__field--value {
-    color: black;
+.input__field--placeholder {
+    color: var(--grey);
 }
 .input__field--hover {
     background-color: var(--light-blue);

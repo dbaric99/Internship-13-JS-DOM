@@ -1,9 +1,9 @@
 let inputFields = document.querySelectorAll('.input__field');
 
 const onInputValueChange = (e) => {
-    if(e.target.value) e.target.classList.add('input__field--value');
+    if(e.target.value === e.target.placeholder) e.target.classList.add('input__field--placeholder');
     else {
-        e.target.classList.remove('input__field--value');
+        e.target.classList.remove('input__field--placeholder');
     }
 }
 
@@ -21,7 +21,7 @@ const onInputBlur = (e) => {
     e.target.parentElement.classList.remove('input__field--focus');
 }
 
-//handle deafult values on submit button click
+// TODO handle submit click, add error classes
 inputFields.forEach((input) => {
     input.addEventListener('input', onInputValueChange);
     input.addEventListener('mouseenter', onInputMouseEnter);
