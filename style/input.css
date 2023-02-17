@@ -7,10 +7,29 @@
 .input__field,
 .form__select {
     color: var(--grey);
-    height: 30px;
+    height: 35px;
     font-size: 16px;
+    padding: 0px 5px;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
 }
 
 .form__select {
-    height: 36px;
+    height: 37px;
+}
+
+
+/* classes appended with js */
+.input__field--value {
+    color: black;
+}
+.input__field--hover {
+    background-color: var(--light-blue);
+}
+.input__field--focus > input {
+    outline: 2px solid var(--blue);
+    border: 1px solid transparent;
+}
+.input__field--focus > label {
+    color: var(--blue);
 }

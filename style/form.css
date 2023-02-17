@@ -12,7 +12,8 @@
     grid-column: 1/-1;
 }
 
-.form__element__wrapper {
+.form__element__wrapper,
+.input-container {
     display: flex;
     flex-direction: column;
 }
