@@ -12,58 +12,56 @@
       <h1 class="form__title">Account Details</h1>
 
       <div class="form__element__wrapper">
-        <div class="input-container">
-          <label for="first-name" class="input__label">First Name</label>
-          <input
-            if="first-name"
-            type="text"
-            placeholder="First Name"
-            class="input__field"
-            value="User"
-          />
-        </div>
+        <label for="first-name" class="input__label">First Name</label>
+        <input
+          if="first-name"
+          type="text"
+          placeholder="First Name"
+          class="input__field"
+          value="User"
+        />
       </div>
 
       <div class="form__element__wrapper">
-        <div class="input-container">
-          <label for="last-name" class="input__label">Last Name</label>
-          <input
-            id="last-name"
-            type="text"
-            placeholder="Last Name"
-            class="input__field"
-            value="Example"
-          />
-        </div>
+        <label for="last-name" class="input__label">Last Name</label>
+        <input
+          id="last-name"
+          type="text"
+          placeholder="Last Name"
+          class="input__field"
+          value="Example"
+        />
       </div>
 
       <div class="form__element__wrapper">
         <label for="education-level" class="input__label"
           >What level do you primarily teach?</label
         >
-        <select name="" id="education-level" class="form__select">
-          <option value="elementary" class="education-level__option">
-            Elementary School
-          </option>
-          <option value="middle" class="education-level__option">
-            Middle School
-          </option>
-          <option value="high" class="education-level__option">
-            High school
-          </option>
-        </select>
+        <input name="" id="education-level" class="form__select" readonly />
+        <div
+          id="education-level__options"
+          class="form__select__options-wrapper"
+        >
+          <div class="form__select__option">Elementary School</div>
+          <div class="form__select__option">Middle School</div>
+          <div class="form__select__option">High School</div>
+        </div>
       </div>
 
       <div class="form__element__wrapper">
         <label for="experience" class="input__label"
           >How long have you been teaching?</label
         >
-        <select name="" id="experience" class="form__select">
-          <option value="entry" class="experience__option">1-5 years</option>
-          <option value="low" class="experience__option">5-10 years</option>
-          <option value="medium" class="experience__option">10-20 years</option>
-          <option value="high" class="experience__option">20+ years</option>
-        </select>
+        <input name="" id="experience-level" class="form__select" readonly />
+        <div
+          id="experience-level__options"
+          class="form__select__options-wrapper"
+        >
+          <div class="form__select__option">1-5 years</div>
+          <div class="form__select__option">5-10 years</div>
+          <div class="form__select__option">10-20 years</div>
+          <div class="form__select__option">20+ years</div>
+        </div>
       </div>
 
       <button class="btn btn--transparent">Change Password</button>

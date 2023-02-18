@@ -1,3 +1,4 @@
+/* INPUT */
 .input__label {
     font-weight: bold;
     font-size: 13px;
@@ -32,4 +33,14 @@
 }
 .input__field--focus > label {
     color: var(--blue);
+}
+
+/* SELECT */
+.form__select {
+    
+}
+
+.form__select option {
+    color: red;
+    background-color: blue;
 }
