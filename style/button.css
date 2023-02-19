@@ -5,6 +5,7 @@
     border: none;
     width: fit-content;
     padding: 0;
+    cursor: pointer;
 }
 
 .btn--transparent {

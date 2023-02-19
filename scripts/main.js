@@ -11,12 +11,26 @@ const experienceSelect = document.querySelector('#experience-level');
 const formDataFromLocalStorage = localStorage.getItem('form');
 
 function saveToLocalStorage() {
+    let obj = {
+        'first-name-input': firstNameInput.value,
+        'last-name-input': lastNameInput.value,
+        'education-level': educationSelect.value,
+        'experience-level': experienceSelect.value,
+    };
 
+    localStorage.setItem('form', JSON.stringify(obj));
 }
 
 function getFromLocalStorage() {
+    if(!formDataFromLocalStorage) return;
 
+    let objFromLocalStorage = JSON.parse(formDataFromLocalStorage);
+    firstNameInput.value = objFromLocalStorage[firstNameInput.id];
+    lastNameInput.value = objFromLocalStorage[lastNameInput.id];
+    educationSelect.value = objFromLocalStorage[educationSelect.id];
+    experienceSelect.value = objFromLocalStorage[experienceSelect.id];
 }
+getFromLocalStorage();
 
 (function fillSelectFields() {
     selectFields.forEach((select) => {
@@ -113,8 +127,7 @@ allDropdownOptions.forEach((option) => {
 // BUTTONS
 const onFormSubmit = (e) => {
     e.preventDefault();
-
-    console.log("SUBMIT");
+    saveToLocalStorage();
 }
 
 form.addEventListener('submit', onFormSubmit);
