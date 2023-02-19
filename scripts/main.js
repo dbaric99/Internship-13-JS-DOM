@@ -61,7 +61,6 @@ const onInputBlur = (e) => {
     e.target.parentElement.classList.remove('input__field--focus');
 }
 
-// TODO handle submit click, add error classes
 inputFields.forEach((input) => {
     input.addEventListener('input', onInputValueChange);
     input.addEventListener('mouseenter', onInputMouseEnter);
@@ -128,9 +127,15 @@ allDropdownOptions.forEach((option) => {
 const onFormSubmit = (e) => {
     e.preventDefault();
     saveToLocalStorage();
+    let prevent = Array.from(inputFields).some(field => field.value === '');
     inputFields.forEach((input) => {
-        input.parentElement.classList.add('input__field--error');
-        input.parentElement.querySelector('.error-message').style.display = "inline-block";
+        if(!input.value) {
+            input.parentElement.classList.add('input__field--error');
+            input.parentElement.querySelector('.error-message').style.display = "inline-block";
+        } else {
+            input.parentElement.classList.remove('input__field--error');
+            input.parentElement.querySelector('.error-message').style.display = "none";
+        }
     });
 }
 
