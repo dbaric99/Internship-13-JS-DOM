@@ -128,6 +128,10 @@ allDropdownOptions.forEach((option) => {
 const onFormSubmit = (e) => {
     e.preventDefault();
     saveToLocalStorage();
+    inputFields.forEach((input) => {
+        input.parentElement.classList.add('input__field--error');
+        input.parentElement.querySelector('.error-message').style.display = "inline-block";
+    });
 }
 
 form.addEventListener('submit', onFormSubmit);
