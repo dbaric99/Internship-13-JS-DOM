@@ -31,14 +31,23 @@ inputFields.forEach((input) => {
     input.addEventListener('blur', onInputBlur);
 });
 
-console.log("select: ", selectFields);
-
 const onSelectFocus = (e) => {
-    e.target.parentElement.classList.add('input__field--focus');
-}
+    let targetParent = e.target.parentElement;
+    let dropdownArrow = targetParent.querySelector('.dropdown-arrow');
+    let dropdownList = targetParent.querySelector('.form__select__options-wrapper')
 
+    targetParent.classList.add('input__field--focus');
+    dropdownArrow.classList.add('dropdown-arrow--focus');
+    dropdownList.style.display = 'flex';
+}
 const onSelectBlur = (e) => {
-    e.target.parentElement.classList.remove('input__field--focus');
+    let targetParent = e.target.parentElement;
+    let dropdownArrow = targetParent.querySelector('.dropdown-arrow');
+    let dropdownList = targetParent.querySelector('.form__select__options-wrapper')
+
+    targetParent.classList.remove('input__field--focus');
+    dropdownArrow.classList.remove('dropdown-arrow--focus');
+    dropdownList.style.display = 'none';
 }
 
 selectFields.forEach((select) => {
