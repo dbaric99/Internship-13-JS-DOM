@@ -18,6 +18,8 @@ function saveToLocalStorage() {
         'experience-level': experienceSelect.value,
     };
 
+    console.log(obj);
+
     localStorage.setItem('form', JSON.stringify(obj));
 }
 
@@ -30,12 +32,14 @@ function getFromLocalStorage() {
     educationSelect.value = objFromLocalStorage[educationSelect.id];
     experienceSelect.value = objFromLocalStorage[experienceSelect.id];
 }
-getFromLocalStorage();
 
 (function fillSelectFields() {
+    getFromLocalStorage();
     selectFields.forEach((select) => {
         let dropdownList = select.parentElement.querySelector('.form__select__options-wrapper').children;
-        select.value = dropdownList[0].innerHTML;
+        if(!select.value) {
+            select.value = dropdownList[0].innerHTML;
+        }
     })
 })()
 
@@ -127,7 +131,6 @@ allDropdownOptions.forEach((option) => {
 const onFormSubmit = (e) => {
     e.preventDefault();
     saveToLocalStorage();
-    let prevent = Array.from(inputFields).some(field => field.value === '');
     inputFields.forEach((input) => {
         if(!input.value) {
             input.parentElement.classList.add('input__field--error');
@@ -138,6 +141,11 @@ const onFormSubmit = (e) => {
         }
     });
 }
-
 form.addEventListener('submit', onFormSubmit);
+
+const changePassButton = document.querySelector('#change-password-btn');
+const goToURL = () => {
+    window.open('https://geekprank.com/');
+}
+changePassButton.addEventListener('click', goToURL);
 
