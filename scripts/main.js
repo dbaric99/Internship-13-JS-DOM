@@ -1,6 +1,29 @@
 const inputFields = document.querySelectorAll('.input__field');
 const selectFields = document.querySelectorAll('.form__select');
 const allDropdownOptions = document.querySelectorAll('.form__select__option');
+const form = document.querySelector('form');
+
+const firstNameInput = document.querySelector('#first-name-input');
+const lastNameInput = document.querySelector('#last-name-input');
+const educationSelect = document.querySelector('#education-level');
+const experienceSelect = document.querySelector('#experience-level');
+
+const formDataFromLocalStorage = localStorage.getItem('form');
+
+function saveToLocalStorage() {
+
+}
+
+function getFromLocalStorage() {
+
+}
+
+(function fillSelectFields() {
+    selectFields.forEach((select) => {
+        let dropdownList = select.parentElement.querySelector('.form__select__options-wrapper').children;
+        select.value = dropdownList[0].innerHTML;
+    })
+})()
 
 // INPUT HANDLERS
 const onInputValueChange = (e) => {
@@ -44,6 +67,10 @@ const onSelectFocus = (e) => {
     dropdownArrow.classList.add('dropdown-arrow--focus');
     dropdownList.style.display = 'flex';
     e.target.classList.add('form__select--open');
+    Array.from(dropdownList.children).forEach((option) => {
+        if(option.innerHTML === e.target.value)
+            option.classList.add('form__select__option--hover');
+    });
 }
 const onSelectBlur = (e) => {
     let targetParent = e.target.parentElement;
@@ -81,4 +108,14 @@ allDropdownOptions.forEach((option) => {
     option.addEventListener('mouseleave', onOptionMouseLeave);
     option.addEventListener('mousedown', onOptionSelect);
 });
+
+
+// BUTTONS
+const onFormSubmit = (e) => {
+    e.preventDefault();
+
+    console.log("SUBMIT");
+}
+
+form.addEventListener('submit', onFormSubmit);
 

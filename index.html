@@ -8,28 +8,26 @@
     <title>JS DOM</title>
   </head>
   <body>
-    <div class="form">
+    <form class="form">
       <h1 class="form__title">Account Details</h1>
 
       <div class="form__element__wrapper">
         <label for="first-name" class="input__label">First Name</label>
         <input
-          if="first-name"
+          id="first-name-input"
           type="text"
           placeholder="First Name"
           class="input__field"
-          value="User"
         />
       </div>
 
       <div class="form__element__wrapper">
         <label for="last-name" class="input__label">Last Name</label>
         <input
-          id="last-name"
+          id="last-name-input"
           type="text"
           placeholder="Last Name"
           class="input__field"
-          value="Example"
         />
       </div>
 
@@ -67,8 +65,8 @@
       </div>
 
       <button class="btn btn--transparent">Change Password</button>
-      <button class="btn btn--blue">Save changes</button>
-    </div>
+      <button type="submit" class="btn btn--blue">Save changes</button>
+    </form>
 
     <script src="./scripts/main.js"></script>
   </body>
