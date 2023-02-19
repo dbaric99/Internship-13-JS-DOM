@@ -20,6 +20,10 @@
     cursor: default;
     background-color: var(--light-blue);
 }
+.form__select--open {
+    color: var(--blue);
+    font-weight: bold;
+}
 
 .dropdown-arrow {
     position: absolute;
@@ -57,11 +61,6 @@
     border-bottom: 1px solid rgba(var(--grey-rgb), 0.2);
 }
 
-.form__select__option--hover {
-    color: var(--blue);
-    font-weight: bold;
-}
-
 /* classes appended with js */
 .input__field--placeholder {
     color: var(--grey);
@@ -80,5 +79,10 @@
 .dropdown-arrow--focus {
     transform: rotate(-45deg) translateY(50%);
     margin-right: 4px;
+}
+
+.form__select__option--hover {
+    color: var(--blue);
+    font-weight: bold;
 }
 

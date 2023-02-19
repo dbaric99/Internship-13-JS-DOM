@@ -1,6 +1,8 @@
 const inputFields = document.querySelectorAll('.input__field');
 const selectFields = document.querySelectorAll('.form__select');
+const allDropdownOptions = document.querySelectorAll('.form__select__option');
 
+// INPUT HANDLERS
 const onInputValueChange = (e) => {
     if(e.target.value === e.target.placeholder) e.target.classList.add('input__field--placeholder');
     else {
@@ -31,6 +33,8 @@ inputFields.forEach((input) => {
     input.addEventListener('blur', onInputBlur);
 });
 
+
+// SELECT HANDLERS
 const onSelectFocus = (e) => {
     let targetParent = e.target.parentElement;
     let dropdownArrow = targetParent.querySelector('.dropdown-arrow');
@@ -39,6 +43,7 @@ const onSelectFocus = (e) => {
     targetParent.classList.add('input__field--focus');
     dropdownArrow.classList.add('dropdown-arrow--focus');
     dropdownList.style.display = 'flex';
+    e.target.classList.add('form__select--open');
 }
 const onSelectBlur = (e) => {
     let targetParent = e.target.parentElement;
@@ -48,10 +53,32 @@ const onSelectBlur = (e) => {
     targetParent.classList.remove('input__field--focus');
     dropdownArrow.classList.remove('dropdown-arrow--focus');
     dropdownList.style.display = 'none';
+    e.target.classList.remove('form__select--open');
 }
 
 selectFields.forEach((select) => {
     select.addEventListener('focus', onSelectFocus);
     select.addEventListener('blur', onSelectBlur);
-})
+});
+
+const onOptionMouseEnter = (e) => {
+    e.target.classList.add('form__select__option--hover');
+};
+const onOptionMouseLeave = (e) => {
+    e.target.classList.remove('form__select__option--hover');
+};
+const onOptionSelect = (e) => {
+    let optionsWrapper = e.target.parentElement;
+    let wrapper = optionsWrapper.parentElement;
+    let inputElement = wrapper.querySelector('.form__select');
+    
+    inputElement.classList.add('form__select--open');
+    inputElement.value = e.target.innerHTML;
+};
+
+allDropdownOptions.forEach((option) => {
+    option.addEventListener('mouseenter', onOptionMouseEnter);
+    option.addEventListener('mouseleave', onOptionMouseLeave);
+    option.addEventListener('mousedown', onOptionSelect);
+});
 
